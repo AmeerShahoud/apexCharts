@@ -1,1 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+
+@include mat.core();
+
+
+
+$primary-palette: (
+ 100: #005088,
+ 500: #005088,
+ 700: #005088,
+ 900: #005088,
+ contrast: (
+  50: rgba(black, 0.87),
+  100: rgba(black, 0.87),
+  200: rgba(black, 0.87),
+  300: white,
+ )
+);
+
+$accent-palette: (
+ 100:#00365D,
+ 500: #00365D,
+ 700:#00365D,
+ 900: #00365D,
+ contrast: (
+  50: rgba(black, 0.87),
+  100: rgba(black, 0.87),
+  200: rgba(black, 0.87),
+  300: white,
+ )
+);
+
+$warn-palette: (
+ 100: #E9BD5A,
+ 500: #E9BD5A,
+ 700: #E9BD5A,
+ 900: #E9BD5A,
+ contrast: (
+  50: rgba(black, 0.87),
+  100: rgba(black, 0.87),
+  200: rgba(black, 0.87),
+  300: white,
+ )
+);
+
+
+$charts-app-primary: mat.define-palette($primary-palette);
+$charts-app-accent: mat.define-palette($accent-palette);
+
+$charts-app-warn: mat.define-palette($warn-palette);
+
+$charts-app-theme: mat.define-light-theme((
+  color: (
+    primary: $charts-app-primary,
+    accent: $charts-app-accent,
+    warn: $charts-app-warn,
+  )
+));
+
+@include mat.all-component-themes($charts-app-theme);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Tajawal', sans-serif; }
+
+
+.btn {
+  @apply  w-fit p-1.5 rounded-xl transition  focus:outline-none focus:ring-4
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-accent text-white focus:ring-primary focus:ring-opacity-25
+}
+
+.btn-primary-light {
+  @apply text-primary hover:text-accent focus:ring-primary focus:ring-opacity-25
+}
+
+.btn-warn {
+  @apply bg-warn hover:bg-transparent text-white focus:ring-primary focus:ring-opacity-25
+}

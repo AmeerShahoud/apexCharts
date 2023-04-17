@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="ar">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+  <link href="./css/fonts.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body dir="rtl">
+  <main class="d-flex flex-nowrap">
+    <div id="sidebar" class="d-flex flex-column position-relative sidebar  flex-shrink-0 text-bg-dark"
+      style="    transition: all .5s ease;min-height: 100vh;background: linear-gradient(133deg, rgba(0,33,62,1) 5%, rgba(0,102,176,1) 20%, rgba(0,33,62,1) 60%);">
+      <div style="    position: absolute;
+
+        z-index: 1000;" class="btn-close-task">
+        <button class="btn btn-secondary" style="border-radius: 24%;border: none;" id="closer">
+          <span class="mdi mdi-greater-than mdi-24px"></span>
+        </button>
+      </div>
+      <div class="d-flex justify-content-center align-items-center my-3">
+        <img src="./photos/Group 2723@3x.png" width="150" />
+      </div>
+      <hr class="border-top w-100">
+      <div class="container">
+
+        <div class="form-group my-3">
+          <input type="text" class="form-control" style="border-radius: 25px; outline: none;border: none;"
+            placeholder="بحث..">
+          <i class="mdi mdi-magnify"></i>
+        </div>
+
+      </div>
+      <div class="container">
+
+        <ul class="list-unstyled px-0">
+          <li class="mb-1">
+            <button class="toggler w-100 text-white btn d-inline-flex px-2 align-items-center rounded border-0">
+              <i class="mdi mdi-magnify mdi-24px ml-2 d-inline-block"></i>
+
+              تحقيقات موظفي الهيئة <span class="badge text-bg-secondary" style="font-size: 8pt; border-radius: 50%;
+          display: inline-block;
+          margin-right: .25rem;"> 25 </span>
+
+            </button>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                  <p class="d-inline-flex mt-2 text-white text-decoration-none rounded">تحقيقات موظفي الهيئة </p>
+                </li>
+                <li>
+                  <p class="d-inline-flex mt-2 text-white text-decoration-none rounded">تحقيقات موظفي الهيئة </a>
+                </li>
+                <li>
+                  <p class="d-inline-flex mt-2 text-white text-decoration-none rounded">تحقيقات موظفي الهيئة </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="toggler w-100 active text-white btn d-inline-flex px-2 align-items-center rounded border-0">
+              <i class="mdi mdi-magnify mdi-24px ml-2 d-inline-block"></i>
+
+              تحقيقات المخلصين الجمركيين <span class="badge text-bg-secondary" style="font-size: 8pt; border-radius: 50%;
+          display: inline-block;
+          margin-right: .25rem;"> 25 </span>
+
+            </button>
+          </li>
+
+        </ul>
+
+
+      </div>
+
+    </div>
+    <div class="w-100">
+      <nav class="bg-white py-3 w-100">
+        <div class="container">
+          <div class="row align-items-center">
+
+            <div class="col-6">
+              <div class="form-group">
+                <input type="text" class="form-control" style="border-radius: 25px; outline: none;border: none;"
+                  placeholder="بحث..">
+                <i class="mdi mdi-magnify"></i>
+              </div>
+            </div>
+            <div class="col-1">
+
+              <button class="btn position-relative">
+                <i class="mdi mdi-mail mdi-24px" style="color: #005088;"></i>
+                <span style="left: 35%;top:35%"
+                  class="position-absolute translate-middle p-1 bg-secondary border border-light rounded-circle">
+                </span>
+              </button>
+            </div>
+            <div class="col-1">
+              <button class="btn  position-relative">
+                <i class="mdi mdi-bell mdi-24px" style="color:#005088;"></i>
+                <span style="left: 35%;top:35%"
+                  class="position-absolute translate-middle p-1 bg-secondary border border-light rounded-circle">
+                </span>
+              </button>
+            </div>
+            <div class="col-4">
+              <div class="d-flex align-items-center" style="gap: 5px">
+                <div>
+                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                    width="40" style="border-radius: 50%" />
+                </div>
+                <div>
+                  <span style="font-size: 15px;font-weight: bold;color: #0a314d!important;">
+                    محمد خالد عبد المنعم
+                    <br>
+                    <span style="font-size: 14px; color: #00365d!important">
+
+                      موظف الهيئة العامة العامة للجمارك
+                    </span>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="bg-light" style="min-height: 100vh;">
+
+        <div class="container">
+
+
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" id='nav-tab-0' onclick="openTab(0,5)">تقرير مخالفة إدارية - مدير الادارة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id='nav-tab-1' onclick="openTab(1,5)">الملحقات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id='nav-tab-2' onclick="openTab(2,5)">تقرير مخالفة إدارية - مدير الادارة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id='nav-tab-3' onclick="openTab(3,5)">الملحقات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id='nav-tab-4' onclick="openTab(4,5)">تقرير مخالفة إدارية - مدير الادارة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id='nav-tab-5' onclick="openTab(5,5)">تقرير مخالفة إدارية - مدير الادارة</a>
+            </li>
+            
+          </ul>
+
+
+
+
+
+          <div class="mt-4" id="tab-0" style="display: block;">
+              
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <div class="d-flex justify-content-between">
+                        <label for="report-number" class="form-label">
+                          رقم التقرير
+                        </label>
+                        <label for="report-number" class="form-label">
+                          Report Serial
+                        </label>
+                      </div>
+                      <input id="report-number" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="d-flex justify-content-between">
+                      <label for="report-number" class="form-label">
+                        تاريخ التقرير
+                      </label>
+                      <label for="report-number" class="form-label">
+                        Report Date
+                      </label>
+                    </div>
+                    <div class="input-group position-relative">
+                      <input id="report-number" class="form-control" />
+                      <span style="left: 0;" class="input-group-text position-absolute mdi mdi-calendar"> </span>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="row mt-2">
+                  <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                      <label for="explan" class="form-label">
+                        شرح عام للمخالفة
+                      </label>
+                    </div>
+                    <textarea id="explan" class="form-control">
+                  </textarea>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <div class="d-flex justify-content-end" style="gap: 5px">
+                    <button class="btn btn-light">
+                      <span class="mdi mdi-content-save"></span> حفظ
+                    </button>
+                    <button class="btn btn-secondary">
+                      <span class="mdi mdi-delete"></span> مسح
+                    </button>
+                  </div>
+                </div>
+              
+          </div>
+
+          <div class="mt-4" id="tab-1" style="display: none;">
+
+              <table class="table table-striped table-bordered caption-top">
+                <thead>
+                  <tr>
+                    <th data-filter-control="input" data-sortable="true" data-field="id" scope="col"
+                      style="background-color: #00365d; color: #fff;">الاسم</th>
+                    <th data-sortable="true" data-field="id2" scope="col"
+                      style="background-color: #00365d; color: #fff;">النوع</th>
+                    <th data-sortable="true" data-field="id3" scope="col"
+                      style="background-color: #00365d; color: #fff;">الاجراءات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-secondary">ملحق 1</td>
+                    <td>توقيع </td>
+                    <td>
+
+                      <div class="d-flex flex-row ">
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-eye"></i>
+                        </a>
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-download"></i>
+                        </a>
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-pen"></i>
+                        </a>
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-delete"></i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-secondary">ملحق 1</td>
+                    <td>توقيع </td>
+                    <td>
+
+                      <div class="d-flex flex-row ">
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-eye"></i>
+                        </a>
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-download"></i>
+                        </a>
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-pen"></i>
+                        </a>
+                        <a href="#" class=" text-secondary icon-btn">
+                          <i class="mdi mdi-delete"></i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            
+          </div>
+
+
+          <div class="mt-4" id="tab-2" style="display: none;">
+              <div class="row">
+                <div class="col-4">
+                  <label for="type" class="form-label">النوع</label>
+                  <select class="form-select">
+                    <option value=""></option>
+                    <option value="1">مخلص</option>
+                    <option value="2">موظف</option>
+                  </select>
+                </div>
+                <div class="col-4">
+                  <label for="type" class="form-label">نوع الموظف</label>
+                  <select class="form-select">
+                    <option value=""></option>
+                    <option value="1">مخلص</option>
+                    <option value="2">موظف</option>
+                  </select>
+                </div>
+                <div class="col-4">
+                  <label for="type" class="form-label">الرقم الوظيفي</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+              <div class="row mt-2 align-items-end">
+                <div class="col-4">
+                  <label for="type" class="form-label">الاسم</label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <div class="col-6">
+                  <label for="type" class="form-label">الرقم الشخصي</label>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="col-2 ">
+                  <button id="loadEmployee" data-bs-toggle="modal" data-bs-target="#report-modal"
+                    class=" w-100 btn btn-secondary">
+                    عرض بحث الحالة
+                  </button>
+                </div>
+              </div>
+              <div class="row mt-2 align-items-end">
+                <div class="col-4">
+                  <label for="type" class="form-label">المسمى الوظيفي</label>
+                  <select class="form-select">
+                  </select>
+                </div>
+                <div class="col-8">
+                  <label for="type" class="form-label">الإدارة</label>
+                  <input class="form-control" />
+                </div>
+              </div>
+
+              <div class="row mt-2 align-items-end">
+                <div class="col-4">
+                  <label for="type" class="form-label">تصنيف المخالفة</label>
+                  <select class="form-select">
+                  </select>
+                </div>
+                <div class="col-4">
+                  <label for="type" class="form-label">نوع المخالفة</label>
+                  <select class="form-select">
+                  </select>
+                </div>
+                <div class="col-4">
+                  <label for="type" class="form-label">رقم البلاغ الامني</label>
+                  <input class="form-control" />
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="form-group">
+                  <div class="d-flex justify-content-between">
+                    <label for="explan" class="form-label">
+                      شرح عام للمخالفة
+                    </label>
+                  </div>
+                  <textarea id="explan" class="form-control">
+                </textarea>
+                </div>
+              </div>
+              
+
+              <div class="mt-2">
+                <div class="d-flex justify-content-between">
+                  <label for="explan" class="form-label">
+                    المرفقات الخاصة بالمخالفة
+                  </label>
+                </div>
+                <div class="upload-btn-wrapper">
+                  <button class="btnr btn">إختر الملف</button>
+                  <span></span>
+                  <input type="file" name="myfile" />
+                </div>
+              </div>
+              <div class="mt-4">
+                <div class="d-flex justify-content-end" style="gap: 5px">
+                  <button class="btn btn-light">
+                    <span class="mdi mdi-content-save"></span> حفظ
+                  </button>
+                  <button class="btn btn-secondary">
+                    <span class="mdi mdi-delete"></span> مسح
+                  </button>
+                </div>
+              </div>
+              <div class="" style="gap: 15px;">
+                <div class="mt-5 container d-flex justify-content-center" style="gap: 15px;">
+                  <button class="btn btn-primary w-25">
+                    <span class="mdi mdi-content-save"></span> حفظ التقرير
+                  </button>
+                  <button class="btn btn-primary w-25">
+                    <span class="mdi mdi-swap-horizontal"></span> تحويل لمساعد الرئيس
+                  </button>
+
+                  <button class="btn btn-primary w-25">
+                    <span class="mdi-checkbox-marked-circle-outline mdi"></span> توقيع جزاء
+                  </button>
+                </div>
+
+              </div>
+
+          </div>
+
+
+          <div class="mt-4" id="tab-3" style="display: none;">
+
+            <table class="table table-striped table-bordered caption-top">
+              <thead>
+                <tr>
+                  <th data-filter-control="input" data-sortable="true" data-field="id" scope="col"
+                    style="background-color: #00365d; color: #fff;">الاسم</th>
+                  <th data-sortable="true" data-field="id2" scope="col"
+                    style="background-color: #00365d; color: #fff;">النوع</th>
+                  <th data-sortable="true" data-field="id3" scope="col"
+                    style="background-color: #00365d; color: #fff;">الاجراءات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-secondary">ملحق 1</td>
+                  <td>توقيع </td>
+                  <td>
+
+                    <div class="d-flex flex-row ">
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-eye"></i>
+                      </a>
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-download"></i>
+                      </a>
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-pen"></i>
+                      </a>
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-delete"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-secondary">ملحق 1</td>
+                  <td>توقيع </td>
+                  <td>
+
+                    <div class="d-flex flex-row ">
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-eye"></i>
+                      </a>
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-download"></i>
+                      </a>
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-pen"></i>
+                      </a>
+                      <a href="#" class=" text-secondary icon-btn">
+                        <i class="mdi mdi-delete"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-4" id="tab-4" style="display: none;">
+            <div class="row align-items-end">
+              <div class="col-4">
+                <label for="type" class="form-label">النوع</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="col-5">
+                <label for="type" class="form-label">الرقم الشخصي</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="col-3">
+                <button class="btn"
+                  style="background-color: #e5f4ff;color: #005088;font-weight: bold;font-size:12pt">
+                  <span class="mdi mdi-eye"></span> اضغط لعرض التفاصيل
+                </button>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-4">
+                <label for="type" class="form-label">الاسم</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="col-5">
+                <label for="type" class="form-label">الادارة</label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4" id="tab-5" style="display: none;">
+            <div class="accordion-body">
+              <div class="row align-items-end">
+                <div class="col-12">
+                  <label for="type" class="form-label">توصيات مدير الادارة</label>
+                  <textarea class="form-control"></textarea>
+                </div>
+
+                <div class="" style="gap: 15px;">
+                  <div class="mt-5 container d-flex justify-content-center" style="gap: 15px;">
+                    <button class="btn btn-primary w-25">
+                      <span class="mdi mdi-content-save"></span> حفظ التقرير للجميع
+                    </button>
+                    <button class="btn btn-primary w-25">
+                      <span class="mdi-checkbox-marked-circle-outline mdi"></span> توقيع جزاء للجميع
+                    </button>
+                    <button class="btn btn-primary w-25">
+                      <span class="mdi-keyboard-return mdi"></span> إعادة لمدخل بيانات
+                    </button>
+
+                    <button class="btn btn-primary w-25">
+                      <span class="mdi-swap-horizontal mdi"></span> تحويل الجميع لمساعد
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="report-modal" tabindex="-1">
+      <div style="max-width: 85vw;width: 85vw;" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header p-0 px-4 pt-2" style="flex-wrap: wrap;">
+            <button type="button" class="btn-close mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <div class="d-flex w-100 justify-content-between align-items-center ">
+              <p style="font-size: .85rem;">
+                <b style="font-weight: bold">تاريخ الاستخراج: </b>
+                25/02/2022
+              </p>
+              <p style="font-weight: bold">
+                بحث حالة
+              </p>
+              <p style="color: red;">
+                تطبع على كل صفحة (سري)
+              </p>
+            </div>
+            <h5 style="font-weight: bold;">بيانات الموظف</h5>
+          </div>
+          <div class="modal-body py-0 px-4">
+            <div class="row">
+              <div class="col-6">
+                <div class="row my-1">
+                  <h6 class="col-4">
+                    <b style="font-weight: bold">
+                      الاسم:
+                    </b>
+                    محمد المخلص
+                  </h6>
+                  <h6 class="col-4">
+                    <b style="font-weight: bold">
+                      الرقم الشخصي:
+                    </b>
+                    123456
+                  </h6>
+                  <h6 class="col-4">
+                    <b style="font-weight: bold">
+                      الرقم الوظيفي:
+                    </b>
+                    012234
+                  </h6>
+                </div>
+                <div class="row my-1">
+                  <h6 class=" ">
+                    <b style="font-weight: bold">
+                      هواتف:
+                    </b>
+                    98023941233
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 class=" ">
+                    <b style="font-weight: bold">
+                      البريد الالكتروني:
+                    </b>
+                    email@example.com
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 class=" ">
+                    <b style="font-weight: bold">
+                      لعنوان الوطني:
+                    </b>
+                    االدوحة - مدينة النصر
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 class=" ">
+                    <b style="font-weight: bold">
+                      الدرجة الوظيفية:
+                    </b>
+                    مدير
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 class=" ">
+                    <b style="font-weight: bold">
+                      تاريخ التعيين:
+                    </b>
+                    02/02/2022
+                  </h6>
+                </div>
+                <div class="row  my-1">
+                  <h6 class="col-6">
+                    <b style="font-weight: bold">
+                      تاريخ انهاء الخدمة:
+                    </b>
+                    01/01/2023
+                  </h6>
+                  <h6 class="col-6">
+                    <b style="font-weight: bold">
+                      سبب انتهاء الخدمة: </b>
+                    أسباب شخصية
+                  </h6>
+
+                </div>
+                <div class="row my-1">
+
+                  <h6 class=" " style="font-weight: bold;">
+                    تقييم اخر ثلاث سنوات
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 class=" ">
+                    <b style="font-weight: bold">
+                      السنة: </b>
+                    2022
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 class=" ">
+                    <b style="font-weight: bold">
+                      السنة: </b>
+                    2022
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 class="">
+                    <b style="font-weight: bold">
+                      السنة: </b>
+                    2022
+                  </h6>
+                </div>
+                <div class="row my-1">
+
+                  <h6 style="font-weight: bold;">
+                    الادارات التي تعمل بها اخر ثلاث سنوات
+                  </h6>
+                </div>
+              </div>
+              <div class="col-6 d-flex justify-content-end">
+                <img height="250"
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png">
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <h5 style="font-weight: bold;">المخالفات الادارية للموظف</h5>
+              <div class="d-flex w-100 justify-content-between align-items-center">
+                <h6 class="col-3">
+                  <b style="font-weight: bold">
+                    رقم المخالفة: </b>
+                  12345
+                </h6>
+                <h6 class="col-3">
+                  <b style="font-weight: bold">
+                    رقم مسلسل الاحالة: </b>
+                  1234
+                </h6>
+                <h6 class="col-3">
+                  <b style="font-weight: bold">
+                    تاريخ: </b>
+                  02/02/2022
+                </h6>
+                <h6 class="col-3">
+                  <b style="font-weight: bold">
+                    اسم الرئيس التنفيذي:</b>
+                  محمد سعدون
+                </h6>
+
+              </div>
+              <div class="row">
+                <h6 class="col-3">
+                  <b style="font-weight: bold">
+                    نوع المخالفة:
+                  </b>
+                  مسلكية
+                </h6>
+                <h6 class="col-3">
+                  <b style="font-weight: bold">
+                    المخالفة1:
+                  </b>
+                  استيراد بضائع دون بيان جمركي
+                </h6>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
+  <script
+    src="https://unpkg.com/bootstrap-table@1.21.0/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+
+  <script src="./javascript/script.js"></script>
+</body>
+
+</html>

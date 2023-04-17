@@ -1,0 +1,291 @@
+body {
+    font-family: 'Tajawal', sans-serif;
+}
+
+.btn-primary {
+    background-color: #e9bd5a;
+    border: none;
+}
+
+.btn-primary:hover {
+    border: 1px solid #e9bd5a;
+}
+
+.bg-secondary,
+.text-bg-secondary,
+.btn-secondary {
+    background-color: #005088 !important;
+}
+
+.btn-secondary:hover {
+    color: #005088 !important;
+    background-color: #005088 !important;
+}
+
+.bg-light,
+.btn-light {
+    background-color: #f9f9f9 !important;
+}
+
+.icon-btn {
+    color: #6c757d !important;
+    font-size: 1.25rem;
+}
+
+.btn:hover {
+    background-color: #9a264b;
+    opacity: .9;
+}
+
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+caption {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: #6c757d;
+    text-align: left;
+}
+
+th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
+
+.btn-toggle::before {
+    width: 1.25em;
+    line-height: 0;
+    background-color: red;
+    transition: transform .35s ease;
+    transform-origin: .5em 50%;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.form-group .form-control {
+    padding-right: 2rem;
+}
+
+.btn-toggle-nav {
+    position: relative;
+}
+
+.btn-toggle-nav::before {
+    position: absolute;
+    width: 0;
+    top: -1rem;
+    right: 1rem;
+    height: 100%;
+    content: "";
+    border-left: .5px dashed #828A95;
+}
+
+
+.btn-toggle-nav>li {
+    position: relative;
+}
+
+.btn-toggle-nav>li::before {
+    position: absolute;
+    width: 15px;
+    height: 0;
+    content: "";
+    right: -1.5rem;
+    border-bottom: dashed .5px #828A95;
+    top: calc(.5rem + 25%);
+}
+
+.btn.active {
+    background-color: #e9bd5a;
+    border-bottom-left-radius: 40px !important;
+    border-top-left-radius: 40px !important;
+}
+
+.sidebar .btn:hover .badge,
+.btn.active>.badge {
+    background-color: white !important;
+    color: #e9bd5a !important;
+}
+
+.sidebar .btn:hover {
+    background-color: #e9bd5a;
+    transition: all .5s ease;
+    border-bottom-left-radius: 40px !important;
+    border-top-left-radius: 40px !important;
+}
+
+nav {
+    width: calc(100vw - 320px);
+}
+
+nav .form-group .form-control {
+    background-color: #f9f9f9;
+    border-radius: 0 !important;
+}
+
+.btn:hover {
+    background-color: transparent !important;
+}
+
+.bg-grey {
+    background-color: #eeeeee;
+    padding: 25px 0;
+}
+
+@keyframes growProgressBar {
+
+    0%,
+    33% {
+        --pgPercentage: 0;
+    }
+
+    100% {
+        --pgPercentage: var(--value);
+    }
+}
+
+@property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+div[role="progressbar"] {
+    --size: 5rem;
+    --fg: #369;
+    --bg: #def;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+        conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg);
+}
+
+div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+}
+
+.btn-close-task {
+    left: -1.5rem;
+    top: 7.5%;
+}
+
+.toggler-2 {
+    margin-right: -290px;
+}
+
+.toggler-2 #closer {
+    margin-left: -15px;
+}
+
+#closer:hover {
+    background-color: #e9bd5a;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background: url('./close-button.svg');
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.accordion-button::after {
+    background: url('./close-button.svg');
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.accordion-button {
+    background-color: #005088 !important;
+    color: #fff !important;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px dashed #cdcdcd;
+    border-radius: 3px;
+    width: 100%;
+    height: 55px;
+}
+
+.upload-btn-wrapper .btnr {
+    color: gray;
+    background-color: #eee;
+    padding: 15px 40px;
+    border-radius: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.upload-btn-wrapper .btnr+span {
+    padding: 5px;
+    font-weight: normal;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 42px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.btn-success:hover {
+    color: #198754;
+}
+
+.btn-danger:hover {
+    color: #dc3545;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.btn-primary:hover {
+    opacity: .75;
+    color: #fff;
+    background-color: #e9bd5a !important;
+    padding: 0;
+}
+
+.nav-link{
+    cursor: pointer;
+}
