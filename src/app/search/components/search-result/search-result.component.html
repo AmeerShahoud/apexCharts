@@ -1,0 +1,21 @@
+<ng-container *ngIf="searchResult$ | async as searchResult; else noResult">
+  <ng-container *ngFor="let item of searchResult">
+    <button class="btn btn-warn min-w-full flex items-center">
+      <i class="mdi mdi-magnify mdi-24px"></i>
+      <span
+        [innerHTML]="getItemKey(item) | highlight : (searchText$ | async) ?? ''"
+      ></span>
+      <!-- <span class="ms-2 px-2 bg-white text-warn rounded-full">25</span> -->
+    </button>
+    <div class="ps-4">
+      <app-tree [sourceData]="getItemValue(item)"></app-tree>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #noResult>
+  <button class="btn btn-warn min-w-full flex items-center">
+    <i class="mdi mdi-magnify mdi-24px"></i>
+    <span>لايوجد نتائج مطابقة للبحث !!</span>
+  </button>
+</ng-template>

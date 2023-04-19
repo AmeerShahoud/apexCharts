@@ -410,10 +410,7 @@ export class ContentComponent {
         type: 'candlestick',
         height: 350,
       },
-      title: {
-        text: 'CandleStick Chart',
-        align: 'left',
-      },
+
       xaxis: {
         type: 'datetime',
       },

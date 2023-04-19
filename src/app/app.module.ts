@@ -10,6 +10,10 @@ import { ContentComponent } from './components/content/content.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MaterialModule } from './material/material.module';
+import { SearchResultComponent } from './search/components/search-result/search-result.component';
+import { TreeComponent } from './search/components/tree/tree.component';
+import { HighlightPipe } from './search/pipes/highlight.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +23,16 @@ import { MaterialModule } from './material/material.module';
     ContentComponent,
 
     ChartComponent,
+
+    SearchResultComponent,
+    TreeComponent,
+    HighlightPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule,
     NgApexchartsModule,
   ],

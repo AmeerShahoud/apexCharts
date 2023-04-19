@@ -83,3 +83,13 @@ body { margin: 0; font-family: 'Tajawal', sans-serif; }
 .btn-warn {
   @apply bg-warn hover:bg-transparent text-white focus:ring-primary focus:ring-opacity-25
 }
+
+.highlight {
+  @apply bg-warn;
+
+}
+
+//  material styles:
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}

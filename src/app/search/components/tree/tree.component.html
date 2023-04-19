@@ -1,0 +1,21 @@
+<ul class="list relative text-white py-6 space-y-4">
+  <ng-container *ngFor="let item of sourceData; let i = index">
+    <ng-container *ngIf="isEmpty(item); else tree"
+      ><li
+        [innerHTML]="getItemKey(item) | highlight : (searchText$ | async) ?? ''"
+      ></li
+    ></ng-container>
+    <ng-template #tree>
+      <li
+        [innerHTML]="getItemKey(item) | highlight : (searchText$ | async) ?? ''"
+      ></li>
+      <div
+        style="margin-top: -10px"
+        [ngClass]="{ 'child-list': i !== sourceData.length - 1 }"
+        class="child-list relative ps-5"
+      >
+        <app-tree [sourceData]="getItemValue(item)"></app-tree>
+      </div>
+    </ng-template>
+  </ng-container>
+</ul>
