@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { TreeData, data } from '../models/tree-data';
+import { BehaviorSubject } from 'rxjs';
+import { TreeNode, data2 } from '../models/tree-data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchService {
-  private _data = data;
+  private _data = data2;
 
   private _searchTextSubject = new BehaviorSubject<string>('');
   searchText$ = this._searchTextSubject.asObservable();
 
-  private _searchResultSubject = new BehaviorSubject<TreeData[] | null>(
+  private _searchResultSubject = new BehaviorSubject<TreeNode[] | null>(
     this._data
   );
   searchResult$ = this._searchResultSubject.asObservable();
@@ -19,7 +19,7 @@ export class SearchService {
   constructor() {}
   searchByText = (text: string) => {
     if (text) {
-      const _searchResult = this._filter(this._data, new RegExp(text, 'gi'));
+      const _searchResult = this._filter2(this._data, new RegExp(text, 'gi'));
       this._searchResultSubject.next(_searchResult);
     } else {
       this._searchResultSubject.next(this._data);
@@ -27,20 +27,46 @@ export class SearchService {
     this._searchTextSubject.next(text);
   };
 
-  private _filter = (data: TreeData[], regex: RegExp): TreeData[] | null => {
+  // private _filter = (data: TreeData[], regex: RegExp): TreeData[] | null => {
+  //   if (data.length === 0) {
+  //     return null;
+  //   }
+  //   const _returnData: TreeData[] = [];
+
+  //   for (let i = 0; i < data.length; i++) {
+  //     const key = Object.keys(data[i])[0];
+  //     if (key.match(regex)) {
+  //       _returnData.push({ ...data[i] });
+  //     } else {
+  //       const _filteredData = this._filter(data[i][key], regex);
+  //       if (_filteredData) {
+  //         _returnData.push({ [key]: _filteredData });
+  //       }
+  //     }
+  //   }
+  //   if (_returnData.length === 0) return null;
+
+  //   return _returnData;
+  // };
+
+  private _filter2 = (data: TreeNode[], regex: RegExp): TreeNode[] | null => {
     if (data.length === 0) {
       return null;
     }
-    const _returnData: TreeData[] = [];
 
+    const _returnData: TreeNode[] = [];
     for (let i = 0; i < data.length; i++) {
-      const key = Object.keys(data[i])[0];
-      if (key.match(regex)) {
-        _returnData.push({ ...data[i] });
+      let nodeText = data[i].id + ' ' + data[i].text;
+      if (nodeText.match(regex)) {
+        _returnData.push(...[data[i]]);
       } else {
-        const _filteredData = this._filter(data[i][key], regex);
-        if (_filteredData) {
-          _returnData.push({ [key]: _filteredData });
+        if (data[i].children) {
+          const _filteredData = this._filter2(data[i].children!, regex);
+          if (_filteredData) {
+            const _node = new TreeNode(data[i].id, data[i].text);
+            _node.addChildren(..._filteredData);
+            _returnData.push(_node);
+          }
         }
       }
     }

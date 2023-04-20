@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TreeData, data } from '../../models/tree-data';
+import { TreeNode } from '../../models/tree-data';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -13,11 +13,7 @@ export class SearchResultComponent {
 
   constructor(private searchService: SearchService) {}
 
-  getItemKey(item: TreeData) {
-    return Object.keys(item)[0];
-  }
-
-  getItemValue(item: TreeData) {
-    return Object.values(item)[0];
+  getRootText(root: TreeNode) {
+    return root.id + '- ' + root.text;
   }
 }
