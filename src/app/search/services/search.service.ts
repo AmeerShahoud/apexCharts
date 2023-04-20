@@ -27,28 +27,6 @@ export class SearchService {
     this._searchTextSubject.next(text);
   };
 
-  // private _filter = (data: TreeData[], regex: RegExp): TreeData[] | null => {
-  //   if (data.length === 0) {
-  //     return null;
-  //   }
-  //   const _returnData: TreeData[] = [];
-
-  //   for (let i = 0; i < data.length; i++) {
-  //     const key = Object.keys(data[i])[0];
-  //     if (key.match(regex)) {
-  //       _returnData.push({ ...data[i] });
-  //     } else {
-  //       const _filteredData = this._filter(data[i][key], regex);
-  //       if (_filteredData) {
-  //         _returnData.push({ [key]: _filteredData });
-  //       }
-  //     }
-  //   }
-  //   if (_returnData.length === 0) return null;
-
-  //   return _returnData;
-  // };
-
   private _filter2 = (data: TreeNode[], regex: RegExp): TreeNode[] | null => {
     if (data.length === 0) {
       return null;
