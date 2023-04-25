@@ -1,14 +1,14 @@
 .list > li {
   position: relative;
-  margin-right: 20px;
+  margin-right: 28px;
 }
 
 .list > li::before {
   position: absolute;
-  width: 20px;
+  width: 28px;
   height: 0;
   content: "";
-  right: -1.25rem;
+  right: -1.75rem;
   border-bottom: dashed 0.5px #828A95;
   top: calc(0.5rem + 25%);
 }
@@ -17,7 +17,7 @@
   position: absolute;
   width: 0;
   bottom: 50%;
-  right: -1.25rem;
+  right: -1.75rem;
   height: 36px;
 
   content: "";

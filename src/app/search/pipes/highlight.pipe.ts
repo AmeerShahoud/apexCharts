@@ -4,12 +4,12 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'highlight',
 })
 export class HighlightPipe implements PipeTransform {
-  transform(value: string, args: string, ..._args: any): string {
-    if (!args) {
+  transform(value: string, searchText: string, ...args: any): string {
+    if (!searchText) {
       return value;
     }
 
-    const regex = new RegExp(args, 'gi');
+    const regex = new RegExp(searchText, 'gi');
     const match = value.match(regex);
 
     if (!match) {

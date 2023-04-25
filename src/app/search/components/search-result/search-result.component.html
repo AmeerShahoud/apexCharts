@@ -1,22 +1,30 @@
-<ng-container *ngIf="searchResult$ | async as searchResult; else noResult">
-  <ng-container *ngFor="let root of searchResult">
-    <button class="btn btn-warn min-w-full flex items-center">
-      <i class="mdi mdi-magnify mdi-24px"></i>
-      <span
-        [innerHTML]="
-          getRootText(root) | highlight : (searchText$ | async) ?? ''
-        "
-      ></span>
-      <!-- <span class="ms-2 px-2 bg-white text-warn rounded-full">25</span> -->
-    </button>
-    <div class="ps-4">
-      <app-tree [sourceData]="root.children!"></app-tree>
-    </div>
+<ng-container
+  *ngIf="
+    rootNodes
+      | treeFilterBySearchText
+        : false
+        : (searchText$ | async) ?? '' as filteredResult
+  "
+  ><ng-container *ngIf="filteredResult.filteredNodes.length; else noResult">
+    <ng-container *ngFor="let rootNode of filteredResult.filteredNodes">
+      <button class="btn btn-warn min-w-full flex items-center">
+        <i class="mdi mdi-magnify mdi-24px"></i>
+        <span
+          [innerHTML]="rootNode.value | highlight : (searchText$ | async) ?? ''"
+        ></span>
+        <!-- <span class="ms-2 px-2 bg-white text-warn rounded-full">25</span> -->
+      </button>
+      <div class="ps-4">
+        <app-tree
+          [isDescendentContainsSearchText]="rootNode.isNodeContainsSearchText"
+          [nodes]="rootNode.children!"
+        ></app-tree></div
+    ></ng-container>
   </ng-container>
 </ng-container>
 
 <ng-template #noResult>
-  <button class="btn btn-warn min-w-full flex roots-center">
+  <button class="btn btn-warn min-w-full flex items-center">
     <i class="mdi mdi-magnify mdi-24px"></i>
     <span>لايوجد نتائج مطابقة للبحث !!</span>
   </button>

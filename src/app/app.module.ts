@@ -14,6 +14,7 @@ import { SearchResultComponent } from './search/components/search-result/search-
 import { TreeComponent } from './search/components/tree/tree.component';
 import { HighlightPipe } from './search/pipes/highlight.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TreeFilterBySearchTextPipe } from './search/pipes/tree-filter-by-search-text.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SearchResultComponent,
     TreeComponent,
     HighlightPipe,
+    TreeFilterBySearchTextPipe,
   ],
   imports: [
     BrowserModule,

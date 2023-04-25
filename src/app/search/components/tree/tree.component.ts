@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TreeNode } from '../../models/tree-data';
+import { SearchTreeNode } from '../../models/tree-data';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -8,12 +8,11 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./tree.component.scss'],
 })
 export class TreeComponent {
-  @Input('sourceData') sourceData!: TreeNode[];
+  @Input('nodes') nodes!: SearchTreeNode[];
+  @Input('isDescendentContainsSearchText')
+  isDescendentContainsSearchText!: boolean;
+
   searchText$ = this.searchService.searchText$;
 
   constructor(private searchService: SearchService) {}
-
-  getNodeText(node: TreeNode) {
-    return node.id + '- ' + node.text;
-  }
 }

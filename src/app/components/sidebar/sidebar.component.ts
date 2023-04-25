@@ -18,7 +18,7 @@ export class SidebarComponent implements OnInit {
     this.searchControl.valueChanges
       .pipe(
         // tap((_) => (this.isLoading = true)),
-        debounceTime(1000),
+        debounceTime(500),
         tap(this.searchService.searchByText)
         // tap((_) => (this.isLoading = false))
       )

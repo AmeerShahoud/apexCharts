@@ -1,25 +1,41 @@
 <ul class="list relative text-white py-6 space-y-4">
-  <ng-container *ngFor="let node of sourceData; let i = index">
-    <ng-container *ngIf="!node.children; else tree"
-      ><li
-        [innerHTML]="
-          getNodeText(node) | highlight : (searchText$ | async) ?? ''
-        "
-      ></li
-    ></ng-container>
-    <ng-template #tree>
-      <li
-        [innerHTML]="
-          getNodeText(node) | highlight : (searchText$ | async) ?? ''
-        "
-      ></li>
-      <div
-        style="margin-top: -10px"
-        [ngClass]="{ 'child-list': i !== sourceData.length - 1 }"
-        class="child-list relative ps-5"
-      >
-        <app-tree [sourceData]="node.children!"></app-tree>
-      </div>
-    </ng-template>
+  <ng-container
+    *ngIf="
+      nodes
+        | treeFilterBySearchText
+          : isDescendentContainsSearchText
+          : (searchText$ | async) ?? '' as filteredResult
+    "
+  >
+    <ng-container
+      *ngFor="let node of filteredResult.filteredNodes; let i = index"
+    >
+      <ng-container *ngIf="!node.children.length; else tree"
+        ><li
+          [innerHTML]="node.value | highlight : (searchText$ | async) ?? ''"
+        ></li
+      ></ng-container>
+      <ng-template #tree>
+        <li
+          [innerHTML]="node.value | highlight : (searchText$ | async) ?? ''"
+        ></li>
+        <div
+          style="margin-top: -10px"
+          [ngClass]="{
+            'child-list': i !== filteredResult.filteredNodes.length - 1
+          }"
+          class="child-list relative ps-7"
+        >
+          <app-tree
+            [isDescendentContainsSearchText]="
+              isDescendentContainsSearchText
+                ? isDescendentContainsSearchText
+                : node.isNodeContainsSearchText
+            "
+            [nodes]="node.children!"
+          ></app-tree>
+        </div>
+      </ng-template>
+    </ng-container>
   </ng-container>
 </ul>
