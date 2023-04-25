@@ -5,27 +5,35 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class SearchService {
+  ///////////////////////////////// the previous way code ///////////////////////////////////////////
   // private _data = data2;
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 
   private _searchTextSubject = new BehaviorSubject<string>('');
   searchText$ = this._searchTextSubject.asObservable();
 
+  ///////////////////////////////// the previous way code ///////////////////////////////////////////
   // private _searchResultSubject = new BehaviorSubject<TreeNode[] | null>(
   //   this._data
   // );
   // searchResult$ = this._searchResultSubject.asObservable();
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 
   constructor() {}
   searchByText = (text: string) => {
+    ///////////////////////////////// the previous way code ///////////////////////////////////////////
     // if (text) {
     //   const _searchResult = this._filter2(this._data, new RegExp(text, 'gi'));
     //   this._searchResultSubject.next(_searchResult);
     // } else {
     //   this._searchResultSubject.next(this._data);
     // }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
     this._searchTextSubject.next(text);
   };
 
+  ///////////////////////////////// the previous way code (DFS tree traversing search) ///////////////////////////////////////////
   // private _filter2 = (data: TreeNode[], regex: RegExp): TreeNode[] | null => {
   //   if (data.length === 0) {
   //     return null;
@@ -51,4 +59,5 @@ export class SearchService {
 
   //   return _returnData;
   // };
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
 }
