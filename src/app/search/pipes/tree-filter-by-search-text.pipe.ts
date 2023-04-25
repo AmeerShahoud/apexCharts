@@ -10,12 +10,9 @@ export class TreeFilterBySearchTextPipe implements PipeTransform {
     isDescendentContainsSearchText: boolean,
     searchText: string,
     ...args: unknown[]
-  ): {
-    filteredNodes: SearchTreeNode[];
-    isDescendentContainsSearchText: boolean;
-  } {
+  ): SearchTreeNode[] {
     if (!searchText || isDescendentContainsSearchText) {
-      return { filteredNodes: nodes, isDescendentContainsSearchText };
+      return nodes;
     }
 
     const regex = new RegExp(searchText, 'gi');
@@ -29,6 +26,6 @@ export class TreeFilterBySearchTextPipe implements PipeTransform {
       else node.isNodeContainsSearchText = false;
     });
 
-    return { filteredNodes, isDescendentContainsSearchText };
+    return filteredNodes;
   }
 }

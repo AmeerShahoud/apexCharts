@@ -3,10 +3,10 @@
     rootNodes
       | treeFilterBySearchText
         : false
-        : (searchText$ | async) ?? '' as filteredResult
+        : (searchText$ | async) ?? '' as filteredNodes
   "
-  ><ng-container *ngIf="filteredResult.filteredNodes.length; else noResult">
-    <ng-container *ngFor="let rootNode of filteredResult.filteredNodes">
+  ><ng-container *ngIf="filteredNodes.length; else noResult">
+    <ng-container *ngFor="let rootNode of filteredNodes">
       <button class="btn btn-warn min-w-full flex items-center">
         <i class="mdi mdi-magnify mdi-24px"></i>
         <span

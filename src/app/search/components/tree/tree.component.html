@@ -4,12 +4,10 @@
       nodes
         | treeFilterBySearchText
           : isDescendentContainsSearchText
-          : (searchText$ | async) ?? '' as filteredResult
+          : (searchText$ | async) ?? '' as filteredNodes
     "
   >
-    <ng-container
-      *ngFor="let node of filteredResult.filteredNodes; let i = index"
-    >
+    <ng-container *ngFor="let node of filteredNodes; let i = index">
       <ng-container *ngIf="!node.children.length; else tree"
         ><li
           [innerHTML]="node.value | highlight : (searchText$ | async) ?? ''"
@@ -22,7 +20,7 @@
         <div
           style="margin-top: -10px"
           [ngClass]="{
-            'child-list': i !== filteredResult.filteredNodes.length - 1
+            'child-list': i !== filteredNodes.length - 1
           }"
           class="child-list relative ps-7"
         >
